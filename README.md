@@ -44,6 +44,7 @@ GET  /api/me
 
 GET  /api/projects
 GET  /api/projects?status=pending
+POST /api/projects
 GET  /api/projects/:id
 GET  /api/projects/:id/tasks
 POST /api/projects/:id/tasks
@@ -75,6 +76,15 @@ curl -X POST http://localhost:3000/api/projects/project_1/tasks \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <token>" \
   -d '{"title":"Connect Flutter screen","priority":"high"}'
+```
+
+Create project:
+
+```bash
+curl -X POST http://localhost:3000/api/projects \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <token>" \
+  -d '{"title":"New Project","description":"Project description","status":"pending"}'
 ```
 
 ## Response Shape
